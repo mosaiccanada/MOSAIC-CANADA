@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mosaic Canada | National Assembly for Community Integration</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: DM Sans & Source Sans 3 for authoritative, warm institutional readability -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Source Sans 3"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+            display: ['"DM Sans"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+          },
+          colors: {
+            tealDeep: '#0F5C5C',
+            tealDark: '#0A4242',
+            tealSoft: '#E3F2F0',
+            terracotta: '#D97724',
+            terracottaHover: '#BF6317',
+            terracottaSoft: '#FFF3E6',
+            warmSand: '#FAF9F5',
+            sage: '#2E6F65',
+            ink: '#172625',
+            mutedInk: '#4A5D5C',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body {
+      background-color: #FAF9F5;
+      color: #172625;
+      font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    h1, h2, h3, h4, .font-display {
+      font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      letter-spacing: -0.015em;
+    }
+    .page-section {
+      display: none;
+      animation: fadeIn 0.28s ease-in-out;
+    }
+    .page-section.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-terracotta/20 selection:text-tealDeep">
+  <!-- ===================================================================== -->
+  <!-- TOP NAVIGATION BAR (Color Psychology: Trustworthy Deep Teal & Warmth) -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-tealDeep/10 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Brand Logo -->
+        <button
+          onclick="navigateTo('home')"
+          class="flex items-center gap-3 text-left focus:outline-none group"
+        >
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-tealDeep to-sage flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+            <!-- Interlocking Mosaic Tile Emblem -->
+            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7" rx="1.5" fill="#D97724" stroke="none" />
+              <rect x="14" y="3" width="7" height="7" rx="1.5" />
+              <rect x="3" y="14" width="7" height="7" rx="1.5" />
+              <rect x="14" y="14" width="7" height="7" rx="1.5" fill="#BCE0DC" stroke="none" />
+            </svg>
+          </div>
+          <div>
+            <span class="font-display font-extrabold text-xl sm:text-2xl tracking-tight text-tealDeep block leading-none">
+              Mosaic <span class="text-terracotta">Canada</span>
+            </span>
+            <span class="text-[11px] font-semibold text-mutedInk tracking-wide block mt-1">
+              National Assembly for Community Integration
+            </span>
+          </div>
+        </button>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-1.5" aria-label="Main Navigation">
+          <button
+            data-nav="home"
+            onclick="navigateTo('home')"
+            class="nav-btn px-4 py-2.5 rounded-xl text-sm font-semibold transition-all bg-tealDeep text-white shadow-sm"
+          >
+            Home &amp; Mission
+          </button>
+          <button
+            data-nav="guide"
+            onclick="navigateTo('guide')"
+            class="nav-btn px-4 py-2.5 rounded-xl text-sm font-semibold transition-all text-ink hover:bg-tealSoft/70"
+          >
+            Newcomer Guide
+          </button>
+          <button
+            data-nav="samaritan"
+            onclick="navigateTo('samaritan')"
+            class="nav-btn px-4 py-2.5 rounded-xl text-sm font-semibold transition-all text-ink hover:bg-tealSoft/70"
+          >
+            Samaritan App
+          </button>
+          <button
+            data-nav="partners"
+            onclick="navigateTo('partners')"
+            class="nav-btn px-4 py-2.5 rounded-xl text-sm font-semibold transition-all text-ink hover:bg-tealSoft/70"
+          >
+            Employers &amp; Partners
+          </button>
+          <button
+            data-nav="volunteer"
+            onclick="navigateTo('volunteer')"
+            class="nav-btn ml-2 px-5 py-2.5 rounded-xl text-sm font-bold transition-all bg-terracotta text-white hover:bg-terracottaHover shadow-sm"
+          >
+            Volunteer
+          </button>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-btn"
+          onclick="toggleMobileMenu()"
+          class="lg:hidden p-3 rounded-xl bg-tealSoft text-tealDeep hover:bg-tealDeep hover:text-white transition-colors"
+          aria-label="Toggle Menu"
+        >
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-tealDeep/10 px-4 pt-3 pb-5 space-y-2 shadow-lg">
+      <button
+        data-nav="home"
+        onclick="navigateTo('home')"
+        class="nav-btn w-full text-left px-4 py-3 rounded-xl text-sm font-semibold bg-tealDeep text-white"
+      >
+        Home &amp; Mission
+      </button>
+      <button
+        data-nav="guide"
+        onclick="navigateTo('guide')"
+        class="nav-btn w-full text-left px-4 py-3 rounded-xl text-sm font-semibold text-ink hover:bg-tealSoft"
+      >
+        Newcomer Integration Guide
+      </button>
+      <button
+        data-nav="samaritan"
+        onclick="navigateTo('samaritan')"
+        class="nav-btn w-full text-left px-4 py-3 rounded-xl text-sm font-semibold text-ink hover:bg-tealSoft"
+      >
+        Samaritan App Initiative
+      </button>
+      <button
+        data-nav="partners"
+        onclick="navigateTo('partners')"
+        class="nav-btn w-full text-left px-4 py-3 rounded-xl text-sm font-semibold text-ink hover:bg-tealSoft"
+      >
+        Employers &amp; Community Partners
+      </button>
+      <button
+        data-nav="volunteer"
+        onclick="navigateTo('volunteer')"
+        class="nav-btn w-full text-left px-4 py-3 rounded-xl text-sm font-bold bg-terracotta text-white"
+      >
+        Volunteer With Us
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- MAIN MULTI-PAGE CONTENT CONTAINER                                     -->
+  <!-- ===================================================================== -->
+  <main class="flex-1">
+    <!-- =================================================================== -->
+    <!-- PAGE 1: HOME & MISSION                                              -->
+    <!-- =================================================================== -->
+    <section id="page-home" class="page-section active">
+      <!-- Institutional Hero Section -->
+      <div class="relative overflow-hidden bg-gradient-to-br from-tealDeep via-tealDark to-sage text-white">
+        <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-terracotta/20 blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-white/10 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-7 space-y-6">
+              <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/20 text-xs sm:text-sm font-semibold text-amber-200">
+                <span>National Assembly for Community Integration</span>
+              </div>
+              <h1 class="font-display text-3xl sm:text-5xl lg:text-[50px] font-extrabold tracking-tight leading-[1.13]">
+                Advancing Civic Literacy, Social Cohesion, and <span class="text-amber-300">Shared Belonging Across Canada.</span>
+              </h1>
+              <p class="text-base sm:text-lg text-teal-50/95 leading-relaxed max-w-2xl">
+                Mosaic Canada is a federally incorporated non-profit organization dedicated to equipping newcomers, employers, and local communities with comprehensive civic orientation, institutional navigation, educational programming, and non-monetary mutual aid infrastructure.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-3.5 pt-2">
+                <button
+                  onclick="navigateTo('guide')"
+                  class="px-6 py-4 rounded-2xl bg-terracotta hover:bg-terracottaHover text-white font-bold text-sm sm:text-base shadow-lg transition-all text-center"
+                >
+                  Explore the Newcomer Guide →
+                </button>
+                <button
+                  onclick="navigateTo('samaritan')"
+                  class="px-6 py-4 rounded-2xl bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold text-sm sm:text-base transition-all text-center"
+                >
+                  Discover the Samaritan App
+                </button>
+              </div>
+            </div>
+
+            <!-- Institutional Mandate Card -->
+            <div class="lg:col-span-5">
+              <div class="bg-white/95 backdrop-blur-md text-ink rounded-3xl p-6 sm:p-8 shadow-2xl border border-white">
+                <h2 class="font-display font-extrabold text-xl text-tealDeep mb-2">
+                  Our National Mandate
+                </h2>
+                <p class="text-sm text-mutedInk leading-relaxed mb-5">
+                  Successful integration thrives when newcomers and host institutions share transparent expectations, legal awareness, and accessible community support systems:
+                </p>
+                <div class="space-y-4">
+                  <div class="flex items-start gap-3.5">
+                    <div class="w-9 h-9 rounded-xl bg-terracottaSoft text-terracotta flex items-center justify-center font-bold shrink-0">
+                      1
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-sm text-ink">Institutional &amp; Civic Literacy</h3>
+                      <p class="text-xs text-mutedInk leading-relaxed">
+                        Comprehensive education spanning Canadian statutory frameworks, Charter rights and obligations, financial and healthcare systems, housing standards, public safety, municipal regulations, and everyday civic norms.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-3.5">
+                    <div class="w-9 h-9 rounded-xl bg-tealSoft text-tealDeep flex items-center justify-center font-bold shrink-0">
+                      2
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-sm text-ink">Constructive Agency &amp; Mutual Cohesion</h3>
+                      <p class="text-xs text-mutedInk leading-relaxed">
+                        Fostering informed self-determination, reciprocal civic responsibility, and constructive adaptation so newcomers participate in Canadian society with clarity, confidence, and mutual respect.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-3.5">
+                    <div class="w-9 h-9 rounded-xl bg-emerald-100 text-sage flex items-center justify-center font-bold shrink-0">
+                      3
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-sm text-ink">Non-Monetary Community Infrastructure</h3>
+                      <p class="text-xs text-mutedInk leading-relaxed">
+                        Through the Samaritan mobile application, we cultivate grassroots social capital and inflation-resilient mutual aid by enabling neighbors to exchange practical skills and assistance without financial barriers.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Core Pathways Grid -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-terracotta">
+            National Programs, Education &amp; Community Infrastructure
+          </span>
+          <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-tealDeep mt-2">
+            Building Resilient, Cohesive Canadian Communities
+          </h2>
+          <p class="text-mutedInk text-sm sm:text-base mt-3 leading-relaxed">
+            From foundational settlement literacy and institutional workshops to grassroots mutual aid technology, our initiatives address the interconnected dimensions of community integration across Canada.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Card 1: Newcomer Guide -->
+          <div class="bg-white rounded-3xl p-7 border border-tealDeep/10 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-tealSoft text-tealDeep flex items-center justify-center text-xl font-bold mb-5">
+                📘
+              </div>
+              <h3 class="font-display text-xl font-extrabold text-ink mb-2">
+                Canadian Orientation &amp; Civic Literacy Resources
+              </h3>
+              <p class="text-sm text-mutedInk leading-relaxed mb-5">
+                Structured settlement roadmaps and broad educational guidance encompassing administrative documentation, financial and digital security, healthcare access, housing, family law, public safety, civic etiquette, workplace standards, and ongoing community integration topics.
+              </p>
+            </div>
+            <button
+              onclick="navigateTo('guide')"
+              class="self-start text-sm font-bold text-tealDeep hover:text-terracotta transition-colors"
+            >
+              Explore Orientation Guide &amp; Checklist →
+            </button>
+          </div>
+
+          <!-- Card 2: Samaritan App -->
+          <div class="bg-white rounded-3xl p-7 border border-terracotta/25 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-terracottaSoft text-terracotta flex items-center justify-center text-xl font-bold mb-5">
+                🤝
+              </div>
+              <div class="inline-block px-2.5 py-0.5 rounded-md bg-terracottaSoft text-terracotta text-[11px] font-bold mb-2">
+                FLAGSHIP COMMUNITY INITIATIVE
+              </div>
+              <h3 class="font-display text-xl font-extrabold text-ink mb-2">
+                The Samaritan Mobile Application
+              </h3>
+              <p class="text-sm text-mutedInk leading-relaxed mb-5">
+                Developed under Mosaic Canada to eliminate financial barriers to everyday assistance. Community members exchange practical skills and favors free of charge using time-based Samaritan Points, strengthening neighborhood trust and insulating households against rising living costs.
+              </p>
+            </div>
+            <button
+              onclick="navigateTo('samaritan')"
+              class="self-start text-sm font-bold text-terracotta hover:text-tealDeep transition-colors"
+            >
+              Examine the Samaritan Initiative →
+            </button>
+          </div>
+
+          <!-- Card 3: Employers & Partners -->
+          <div class="bg-white rounded-3xl p-7 border border-tealDeep/10 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-sage flex items-center justify-center text-xl font-bold mb-5">
+                🏢
+              </div>
+              <h3 class="font-display text-xl font-extrabold text-ink mb-2">
+                Institutional Training, Education &amp; Advisory Programs
+              </h3>
+              <p class="text-sm text-mutedInk leading-relaxed mb-5">
+                Comprehensive education, structured training, public awareness raising, and bespoke advisory services for Canadian employers, municipalities, housing providers, educational institutions, and community agencies seeking cohesive and healthy environments.
+              </p>
+            </div>
+            <button
+              onclick="navigateTo('partners')"
+              class="self-start text-sm font-bold text-sage hover:text-terracotta transition-colors"
+            >
+              Explore Workshops &amp; Advisory Services →
+            </button>
+          </div>
+
+          <!-- Card 4: Volunteer -->
+          <div class="bg-white rounded-3xl p-7 border border-tealDeep/10 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-xl font-bold mb-5">
+                💛
+              </div>
+              <h3 class="font-display text-xl font-extrabold text-ink mb-2">
+                National Volunteer &amp; Civic Engagement Network
+              </h3>
+              <p class="text-sm text-mutedInk leading-relaxed mb-5">
+                Contribute your professional expertise, facilitate educational workshops, support bilingual outreach, or help expand local community initiatives across Canada.
+              </p>
+            </div>
+            <button
+              onclick="navigateTo('volunteer')"
+              class="self-start text-sm font-bold text-terracotta hover:text-tealDeep transition-colors"
+            >
+              Apply to Volunteer →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- PAGE 2: NEWCOMER INTEGRATION GUIDE & INTERACTIVE CHECKLIST          -->
+    <!-- =================================================================== -->
+    <section id="page-guide" class="page-section">
+      <div class="bg-tealDeep text-white py-12 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="inline-block px-3 py-1 rounded-full bg-white/15 text-amber-200 text-xs font-bold uppercase tracking-wider mb-3">
+            Canadian Civic &amp; Settlement Orientation
+          </span>
+          <h1 class="font-display text-3xl sm:text-4xl font-extrabold">
+            Foundational Guide to Adapting &amp; Thriving in Canada
+          </h1>
+          <p class="text-teal-50/90 text-sm sm:text-base max-w-3xl mt-3 leading-relaxed">
+            Clear institutional knowledge forms the foundation of successful settlement. Understanding Canadian statutory frameworks, public safety standards, financial systems, family protections, and workplace norms enables newcomers to navigate daily life with confidence and mutual respect.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+        <!-- Interactive Arrival Checklist -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-terracotta/30 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-100 pb-5 mb-6">
+            <div>
+              <span class="text-xs font-extrabold uppercase tracking-wider text-terracotta">
+                Interactive Settlement Tracker
+              </span>
+              <h2 class="font-display text-2xl font-extrabold text-tealDeep mt-1">
+                Initial Settlement Milestones: Priority Action Checklist
+              </h2>
+            </div>
+            <div class="bg-tealSoft px-4 py-2 rounded-xl text-sm font-bold text-tealDeep self-start sm:self-center">
+              Completed: <span id="checklist-progress">0</span> / 7
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="arrival-checklist">
+            <label class="flex items-start gap-3.5 p-4 rounded-2xl bg-warmSand border border-tealDeep/10 cursor-pointer hover:border-tealDeep transition-colors">
+              <input type="checkbox" onchange="updateChecklistCount()" class="mt-1 w-5 h-5 accent-tealDeep rounded" />
+              <div>
+                <span class="font-bold text-sm text-ink block">1. Obtain Your Social Insurance Number (SIN)</span>
+                <span class="text-xs text-mutedInk leading-relaxed">
+                  Apply through Service Canada with your primary immigration documentation (Confirmation of Permanent Residence, Work Permit, or Study Permit) and passport. Safeguard your SIN strictly and provide it only to verified employers, financial institutions, or government authorities.
+                </span>
+              </div>
+            </label>
+
+            <label class="flex items-start gap-3.5 p-4 rounded-2xl bg-warmSand border border-tealDeep/10 cursor-pointer hover:border-tealDeep transition-colors">
+              <input type="checkbox" onchange="updateChecklistCount()" class="mt-1 w-5 h-5 accent-tealDeep rounded" />
+              <div>
+                <span class="font-bold text-sm text-ink block">2. Establish a Canadian Bank Account &amp; Digital Banking</span>
+                <span class="text-xs text-mutedInk leading-relaxed">
+                  Schedule an in-person appointment at a regulated Canadian financial institution with your identification and proof of residency. Familiarize yourself with Interac e-Transfer, direct payroll deposit, and multi-factor authentication (MFA).
+                </span>
+              </div>
+            </label>
+
+            <label class="flex items-start gap-3.5 p-4 rounded-2xl bg-warmSand border border-tealDeep/10 cursor-pointer hover:border-tealDeep transition-colors">
+              <input type="checkbox" onchange="updateChecklistCount()" class="mt-1 w-5 h-5 accent-tealDeep rounded" />
+              <div>
+                <span class="font-bold text-sm text-ink block">3. Register Children for School Enrollment</span>
+                <span class="text-xs text-mutedInk leading-relaxed">
+                  School attendance is mandatory for children in Canada. Contact your local school board promptly with your child's birth certificate, immunization records, immigration documentation, and proof of residential address.
+                </span>
+              </div>
+            </label>
+
+            <label class="flex items-start gap-3.5 p-4 rounded-2xl bg-warmSand border border-tealDeep/10 cursor-pointer hover:border-tealDeep transition-colors">
+              <input type="checkbox" onchange="updateChecklistCount()" class="mt-1 w-5 h-5 accent-tealDeep rounded" />
+              <div>
+                <span class="font-bold text-sm text-ink block">4. Register for Provincial or Territorial Health Coverage</span>
+                <span class="text-xs text-mutedInk leading-relaxed">
+                  Apply immediately for public health insurance in your jurisdiction: Ontario (OHIP), British Columbia (MSP), Alberta (AHCIP), Quebec (RAMQ), Manitoba (Manitoba Health), Saskatchewan (Saskatchewan Health), Nova Scotia (MSI), New Brunswick (Medicare), Newfoundland and Labrador (MCP), Prince Edward Island (Health PEI), Northwest Territories (NTHSSI), Yukon (YHCIP), or Nunavut (Nunavut Health Care Plan).
+                </span>
+              </div>
+            </label>
+
+            <label class="flex items-start gap-3.5 p-4 rounded-2xl bg-warmSand border border-tealDeep/10 cursor-pointer hover:border-tealDeep transition-colors">
+              <input type="checkbox" onchange="updateChecklistCount()" class="mt-1 w-5 h-5 accent-tealDeep rounded" />
+              <div>
+                <span class="font-bold text-sm text-ink block">5. Acquire Appropriate Cold-Weather &amp; Winter Attire</span>
+                <span class="text-xs text-mutedInk leading-relaxed">
+                  Prior to sub-zero temperatures, equip every household member with insulated waterproof footwear, a thermal winter coat, moisture-wicking base layers, insulated gloves or mittens, a winter hat, and a scarf to prevent frostbite and hypothermia.
+                </span>
+              </div>
+            </label>
+
+            <label class="flex items-start gap-3.5 p-4 rounded-2xl bg-warmSand border border-tealDeep/10 cursor-pointer hover:border-tealDeep transition-colors">
+              <input type="checkbox" onchange="updateChecklistCount()" class="mt-1 w-5 h-5 accent-tealDeep rounded" />
+              <div>
+                <span class="font-bold text-sm text-ink block">6. Review Road, Pedestrian &amp; Local Transit Regulations</span>
+                <span class="text-xs text-mutedInk leading-relaxed">
+                  Study your provincial driver's handbook, follow all road signage and pedestrian crossing signals without jaywalking, and download your municipality's official public transit application (such as OC Transpo, TTC, STM, or TransLink) if navigating by bus or rail.
+                </span>
+              </div>
+            </label>
+
+            <label class="flex items-start gap-3.5 p-4 rounded-2xl bg-warmSand border border-tealDeep/10 cursor-pointer hover:border-tealDeep transition-colors md:col-span-2">
+              <input type="checkbox" onchange="updateChecklistCount()" class="mt-1 w-5 h-5 accent-tealDeep rounded" />
+              <div>
+                <span class="font-bold text-sm text-ink block">7. Connect With Neighbors Through the Samaritan Application</span>
+                <span class="text-xs text-mutedInk leading-relaxed">
+                  Participate in your local neighborhood network to exchange practical skills, access non-monetary community support, and build constructive local relationships.
+                </span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- 6 Core Educational Modules -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Module 1: Banking Security & Anti-Fraud Protection -->
+          <article class="bg-white rounded-3xl p-7 border border-tealDeep/10 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="w-10 h-10 rounded-xl bg-tealSoft text-tealDeep flex items-center justify-center font-bold text-lg">
+                🛡️
+              </span>
+              <h3 class="font-display text-xl font-extrabold text-tealDeep">
+                Financial Security &amp; Anti-Fraud Protection
+              </h3>
+            </div>
+            <p class="text-sm text-mutedInk leading-relaxed mb-4">
+              Malicious third parties frequently impersonate Canadian government agencies or financial institutions to target newly arrived residents. Understanding standard institutional protocols protects your personal data and savings:
+            </p>
+            <ul class="space-y-2.5 text-sm text-ink">
+              <li class="flex items-start gap-2">
+                <span class="text-terracotta font-bold">•</span>
+                <span><strong>Official Government Communication Standards:</strong> The Canada Revenue Agency (CRA), Immigration, Refugees and Citizenship Canada (IRCC), Service Canada, and law enforcement agencies will <strong>never</strong> demand payment via gift cards, cryptocurrency, or wire transfers, nor threaten arrest or deportation by telephone or text message.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-terracotta font-bold">•</span>
+                <span><strong>Digital Banking &amp; Cyber Hygiene:</strong> Refrain from selecting hyperlinks in unsolicited SMS alerts or emails claiming account suspension. Always access accounts through your bank's official mobile application, activate multi-factor authentication, and never disclose one-time verification codes.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-terracotta font-bold">•</span>
+                <span><strong>Protection of Sensitive Identifiers:</strong> Safeguard your Social Insurance Number, passport details, and banking credentials. Legitimate residential landlords and prospective employers do not require a SIN during preliminary screening stages.</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Module 2: Seasonal Preparedness, Road & Transit Safety -->
+          <article class="bg-white rounded-3xl p-7 border border-tealDeep/10 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="w-10 h-10 rounded-xl bg-sky-100 text-sky-800 flex items-center justify-center font-bold text-lg">
+                ❄️
+              </span>
+              <h3 class="font-display text-xl font-extrabold text-tealDeep">
+                Seasonal Preparedness, Road Rules &amp; Public Transit
+              </h3>
+            </div>
+            <p class="text-sm text-mutedInk leading-relaxed mb-4">
+              Canadian winters present severe cold, snow accumulation, and icy surfaces. Adhering to cold-weather clothing standards, traffic laws, and municipal transit systems ensures personal and public safety:
+            </p>
+            <ul class="space-y-2.5 text-sm text-ink">
+              <li class="flex items-start gap-2">
+                <span class="text-terracotta font-bold">•</span>
+                <span><strong>Thermal Layering for Extreme Cold:</strong> Dress in three functional layers: a moisture-wicking synthetic or merino wool base layer, an insulating fleece or wool mid-layer, and a windproof, waterproof outer coat paired with slip-resistant winter boots.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-terracotta font-bold">•</span>
+                <span><strong>Pedestrian &amp; Roadway Regulations:</strong> Pedestrians must cross streets exclusively at marked crosswalks and intersections, wait for the pedestrian walk signal before stepping off the curb, and refrain from jaywalking. Drivers must make full stops at red octagon signs, yield to pedestrians, and stop in both directions when a school bus displays flashing red lights.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-terracotta font-bold">•</span>
+                <span><strong>Navigating Local Public Transit:</strong> If you do not operate a personal vehicle, download your local municipal bus and rail transit application (such as OC Transpo, TTC, STM, Calgary Transit, or TransLink) to check real-time schedules, plan routes, and pay fares accurately.</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Module 3: Women's Rights & Legal Autonomy -->
+          <article class="bg-white rounded-3xl p-7 border border-tealDeep/10 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="w-10 h-10 rounded-xl bg-terracottaSoft text-terracotta flex items-center justify-center font-bold text-lg">
+                ⚖️
+              </span>
+              <h3 class="font-display text-xl font-extrabold text-tealDeep">
+                Women's Legal Rights &amp; Personal Autonomy in Canada
+              </h3>
+            </div>
+            <p class="text-sm text-mutedInk leading-relaxed mb-4">
+              Under the Canadian Charter of Rights and Freedoms and federal and provincial statutes, women possess complete, equal legal, financial, and personal autonomy:
+            </p>
+            <ul class="space-y-2.5 text-sm text-ink">
+              <li class="flex items-start gap-2">
+                <span class="text-terracotta font-bold">•</span>
+                <span><strong>Freedom of Expression &amp; Personal Attire:</strong> Every woman in Canada holds the protected legal right to choose her clothing, personal expression, education, employment, and civic participation free from coercion or restriction by family or community members.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-terracotta font-bold">•</span>
+                <span><strong>Bodily &amp; Reproductive Self-Determination:</strong> Women exercise sole legal authority over their own bodies, medical care, contraception, and reproductive decisions. No spouse or relative may override a woman's healthcare choices.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-terracotta font-bold">•</span>
+                <span><strong>Freedom of Marital Choice &amp; Protection from Harm:</strong> Coerced or forced marriage is a criminal offense in Canada. Every adult freely chooses whether and whom to marry. Physical, emotional, or financial abuse is strictly unlawful (dial <strong>911</strong> in any emergency).</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Module 4: Child Protection Laws & Family Wellbeing -->
+          <article class="bg-white rounded-3xl p-7 border border-tealDeep/10 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="w-10 h-10 rounded-xl bg-rose-100 text-rose-800 flex items-center justify-center font-bold text-lg">
+                🧒
+              </span>
+              <h3 class="font-display text-xl font-extrabold text-tealDeep">
+                Child Protection Statutes &amp; Parental Responsibilities
+              </h3>
+            </div>
+            <p class="text-sm text-mutedInk leading-relaxed mb-4">
+              Canadian law enforces rigorous protections for the physical, psychological, and developmental wellbeing of children. Disciplinary practices permitted in other jurisdictions may violate Canadian criminal and family statutes:
+            </p>
+            <ul class="space-y-2.5 text-sm text-ink">
+              <li class="flex items-start gap-2">
+                <span class="text-terracotta font-bold">•</span>
+                <span><strong>Prohibition of Physical Force &amp; Neglect:</strong> Striking, slapping, shaking, using objects on a child, causing physical injury, verbal intimidation, or leaving young children unsupervised constitutes unlawful abuse or neglect.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-terracotta font-bold">•</span>
+                <span><strong>Mandatory Duty to Report:</strong> Educators, healthcare practitioners, childcare providers, and members of the public are legally obligated to report any reasonable suspicion of child maltreatment to a provincial Children's Aid Society (CAS) or Child Protection Authority.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-terracotta font-bold">•</span>
+                <span><strong>Legal Consequences &amp; Intervention:</strong> Upon receiving a report, child protection authorities and law enforcement investigate promptly. Legal consequences may include criminal charges, court-mandated parenting supervision, or temporary or permanent removal of children from the residence.</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Module 5: Shared Public Spaces, Civic Etiquette & Religious Practice -->
+          <article class="bg-white rounded-3xl p-7 border border-tealDeep/10 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="w-10 h-10 rounded-xl bg-emerald-100 text-sage flex items-center justify-center font-bold text-lg">
+                🍁
+              </span>
+              <h3 class="font-display text-xl font-extrabold text-tealDeep">
+                Shared Public Spaces, Civic Etiquette &amp; Religious Practice
+              </h3>
+            </div>
+            <p class="text-sm text-mutedInk leading-relaxed mb-4">
+              Canada safeguards individual freedom of conscience while maintaining accessible, orderly, and secular shared civic spaces for all residents:
+            </p>
+            <ul class="space-y-2.5 text-sm text-ink">
+              <li class="flex items-start gap-2">
+                <span class="text-terracotta font-bold">•</span>
+                <span><strong>Stewardship of Shared Public Spaces:</strong> Sidewalks, transit terminals, parks, roadways, and commercial corridors exist for unobstructed public passage. Religious prayer and worship are conducted privately at home, within designated places of worship, or in authorized quiet rooms rather than obstructing shared public thoroughfares.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-terracotta font-bold">•</span>
+                <span><strong>Civic Courtesy &amp; Environmental Stewardship:</strong> Observe orderly queuing in lines, respect personal physical space, maintain low vocal volume on public transit, hold doors for following pedestrians, and ensure proper waste disposal in accordance with municipal environmental bylaws.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-terracotta font-bold">•</span>
+                <span><strong>Constructive Integration &amp; Community Goodwill:</strong> Community expectations regarding shared public order and local customs reflect civic standards rather than personal hostility. Consistent adherence to Canadian civic norms leads to mutual trust, harmonious neighborly relations, and community goodwill.</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Module 6: The Canadian Workplace: Mutual Rights & Boundaries -->
+          <article class="bg-white rounded-3xl p-7 border border-tealDeep/10 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-lg">
+                💼
+              </span>
+              <h3 class="font-display text-xl font-extrabold text-tealDeep">
+                The Canadian Workplace: Mutual Rights, Laws &amp; Boundaries
+              </h3>
+            </div>
+            <p class="text-sm text-mutedInk leading-relaxed mb-4">
+              Canadian employment environments operate under clear statutory frameworks designed to protect the rights and obligations of both workers and employers equally:
+            </p>
+            <ul class="space-y-2.5 text-sm text-ink">
+              <li class="flex items-start gap-2">
+                <span class="text-terracotta font-bold">•</span>
+                <span><strong>Reciprocal Legal Protections for Workers &amp; Employers:</strong> Federal and provincial Employment Standards Acts, Occupational Health and Safety Acts, and Human Rights Codes protect workers' rights to fair wages, safe working conditions, and freedom from discrimination, while simultaneously upholding employers' rights to establish lawful operational standards, workplace policies, and professional conduct.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-terracotta font-bold">•</span>
+                <span><strong>Professional Boundaries &amp; Workplace Laws:</strong> Maintain respectful professional boundaries with colleagues and supervisors. Asking coworkers personal and intrusive questions (such as inquiries regarding marital status, family planning, religion, age, income, or medical history) is inappropriate and may contravene workplace harassment policies.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-terracotta font-bold">•</span>
+                <span><strong>Support &amp; Recourse for Workplace Questions:</strong> If you have questions regarding unfair treatment or employment standards, you may consult your provincial or federal Ministry of Labour (Employment Standards Board), the applicable Human Rights Commission, or a community legal clinic. You are also welcome to connect directly with <strong>Mosaic Canada</strong> for guidance on navigating workplace scenarios constructively.</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- PAGE 3: SAMARITAN APP INITIATIVE                                    -->
+    <!-- =================================================================== -->
+    <section id="page-samaritan" class="page-section">
+      <div class="bg-gradient-to-br from-terracotta via-terracottaHover to-tealDeep text-white py-14 sm:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl space-y-5">
+            <span class="inline-block px-3.5 py-1 rounded-full bg-white/20 text-white text-xs font-extrabold uppercase tracking-wider">
+              An Official Community Product of Mosaic Canada
+            </span>
+            <h1 class="font-display text-3xl sm:text-5xl font-extrabold leading-tight">
+              The Samaritan Application: Strengthening Community Resilience Without Financial Barriers
+            </h1>
+            <p class="text-base sm:text-lg text-amber-50 leading-relaxed">
+              Developed by Mosaic Canada, the Samaritan mobile application makes everyday services that households would normally pay for <strong>completely free of charge</strong>, fostering a stronger sense of community and mutual trust while helping residents navigate rising living costs and inflation without relying on money.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-12">
+        <!-- Mission Statement & Economic Resilience Box -->
+        <div class="bg-white rounded-3xl p-7 sm:p-10 border border-tealDeep/10 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-4">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-terracotta">
+              Purpose &amp; Civic Impact
+            </span>
+            <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-tealDeep">
+              Insulating Communities Against Inflation Through Mutual Aid
+            </h2>
+            <p class="text-sm sm:text-base text-mutedInk leading-relaxed">
+              As the cost of housing, groceries, home maintenance, and daily services continues to rise across Canada, isolated individuals and families bear the heaviest burden. At the same time, every neighborhood possesses abundant human capability across retirees, students, newcomers, tradespeople, and working families.
+            </p>
+            <p class="text-sm sm:text-base text-mutedInk leading-relaxed">
+              Mosaic Canada created the <strong>Samaritan App</strong> to mobilize that local goodwill without requiring financial transactions. By exchanging favors through time-based <strong>Samaritan Points (1 hour of service = 10 points)</strong>, community members remain equipped to support one another regardless of broader economic pressures.
+            </p>
+          </div>
+
+          <div class="lg:col-span-5 bg-warmSand rounded-2xl p-6 border border-tealDeep/15 space-y-4">
+            <h3 class="font-display font-extrabold text-lg text-tealDeep">
+              Core Architecture of Samaritan
+            </h3>
+            <div class="space-y-3 text-sm">
+              <div class="flex items-start gap-3">
+                <span class="px-2.5 py-1 rounded-lg bg-tealDeep text-white font-bold text-xs shrink-0">
+                  1 HR = 10 PTS
+                </span>
+                <p class="text-mutedInk">
+                  <strong>Equal Valuation of Time:</strong> Every hour of neighborly assistance carries equal value, whether shoveling snow, tutoring, repairing household items, or running errands.
+                </p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="px-2.5 py-1 rounded-lg bg-terracotta text-white font-bold text-xs shrink-0">
+                  ESCROW
+                </span>
+                <p class="text-mutedInk">
+                  <strong>Structured Points Escrow:</strong> Points are held securely in escrow when an exchange is confirmed and released upon mutual completion.
+                </p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="px-2.5 py-1 rounded-lg bg-sage text-white font-bold text-xs shrink-0">
+                  TRUST
+                </span>
+                <p class="text-mutedInk">
+                  <strong>Multi-Pillar Community Accountability:</strong> Neighbors evaluate communication, respect, timeliness, reliability, and skill quality to cultivate high-trust local networks.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Everyday Services Made Free -->
+        <div>
+          <h3 class="font-display text-2xl font-extrabold text-tealDeep text-center mb-8">
+            Practical Services Accessible Free of Charge
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="bg-white p-6 rounded-2xl border border-tealDeep/10">
+              <div class="text-2xl mb-3">❄️</div>
+              <h4 class="font-bold text-ink mb-1">Seasonal Yard &amp; Snow Care</h4>
+              <p class="text-xs text-mutedInk leading-relaxed">
+                Walkway snow clearing for seniors or recovering neighbors, leaf raking, and seasonal property upkeep.
+              </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-tealDeep/10">
+              <div class="text-2xl mb-3">🛠️</div>
+              <h4 class="font-bold text-ink mb-1">Household Maintenance &amp; Mending</h4>
+              <p class="text-xs text-mutedInk leading-relaxed">
+                Furniture assembly, minor shelving repairs, garment hemming, and practical household skill sharing.
+              </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-tealDeep/10">
+              <div class="text-2xl mb-3">📚</div>
+              <h4 class="font-bold text-ink mb-1">Academic &amp; Career Mentorship</h4>
+              <p class="text-xs text-mutedInk leading-relaxed">
+                Youth reading support, conversational English and French practice, and Canadian resume review.
+              </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-tealDeep/10">
+              <div class="text-2xl mb-3">🛒</div>
+              <h4 class="font-bold text-ink mb-1">Errands &amp; Household Support</h4>
+              <p class="text-xs text-mutedInk leading-relaxed">
+                Grocery assistance, pet walking, digital literacy help for seniors, and batch meal preparation.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grant Funding & Institutional Partnership Banner -->
+        <div class="bg-tealSoft rounded-3xl p-7 sm:p-10 border border-tealDeep/15 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="space-y-2 max-w-2xl">
+            <h3 class="font-display text-xl sm:text-2xl font-extrabold text-tealDeep">
+              Partner With Mosaic Canada to Scale Community Resilience
+            </h3>
+            <p class="text-sm text-mutedInk leading-relaxed">
+              As a core technological initiative of Mosaic Canada, we collaborate with grant funders, municipalities, and community organizations to expand the Samaritan platform across neighborhoods nationwide.
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+            <button
+              onclick="navigateTo('partners')"
+              class="px-6 py-3.5 rounded-2xl bg-tealDeep hover:bg-tealDark text-white font-bold text-sm transition-colors"
+            >
+              Institutional Partnerships
+            </button>
+            <button
+              onclick="navigateTo('volunteer')"
+              class="px-6 py-3.5 rounded-2xl bg-terracotta hover:bg-terracottaHover text-white font-bold text-sm transition-colors"
+            >
+              Contribute Skills
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- PAGE 4: EMPLOYERS & COMMUNITY PARTNERS (6-MODULE CURRICULUM)        -->
+    <!-- =================================================================== -->
+    <section id="page-partners" class="page-section">
+      <div class="bg-sage text-white py-12 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="inline-block px-3 py-1 rounded-full bg-white/15 text-amber-200 text-xs font-bold uppercase tracking-wider mb-3">
+            Education, Training, Awareness Raising &amp; Advisory Services
+          </span>
+          <h1 class="font-display text-3xl sm:text-4xl font-extrabold">
+            For Employers &amp; Community Partners
+          </h1>
+          <p class="text-emerald-50 text-sm sm:text-base max-w-3xl mt-3 leading-relaxed">
+            Mosaic Canada designs and delivers comprehensive education, structured training, public awareness raising, and customized advisory programs for Canadian employers, municipalities, housing providers, schools, and community organizations to foster cohesive, healthy, and productive environments.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-14">
+        <!-- Institutional Value Proposition for Employers & Community Partners -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Employers -->
+          <div class="bg-white rounded-3xl p-7 sm:p-8 border border-tealDeep/15 shadow-sm">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-tealSoft text-tealDeep text-xs font-extrabold uppercase mb-4">
+              🏢 For Canadian Employers &amp; Organizational Leaders
+            </div>
+            <h2 class="font-display text-2xl font-extrabold text-ink mb-3">
+              Workforce Integration, Retention &amp; Compliance Advisory
+            </h2>
+            <p class="text-sm text-mutedInk leading-relaxed">
+              We partner with private-sector employers, human resources departments, and industry associations to strengthen onboarding outcomes, clarify mutual legal rights and obligations, elevate cross-cultural communication, and build high-trust workplace teams.
+            </p>
+          </div>
+
+          <!-- Community Partners -->
+          <div class="bg-white rounded-3xl p-7 sm:p-8 border border-terracotta/25 shadow-sm">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-terracottaSoft text-terracotta text-xs font-extrabold uppercase mb-4">
+              🤝 For Service Providers, Housing Agencies &amp; Municipalities
+            </div>
+            <h2 class="font-display text-2xl font-extrabold text-ink mb-3">
+              Service Provider Capacity Building &amp; Public Awareness Programs
+            </h2>
+            <p class="text-sm text-mutedInk leading-relaxed">
+              We equip settlement agencies, social service providers, residential housing organizations, school boards, and municipal departments with practical workshops, tenant education, civic awareness programming, and neighborhood mutual aid initiatives tailored to diverse populations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Flexible Umbrella Training Areas -->
+        <div>
+          <div class="text-center max-w-4xl mx-auto mb-10">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-terracotta">
+              Bespoke Curriculum Design &amp; Flexible Scope
+            </span>
+            <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-tealDeep mt-1">
+              Illustrative Areas of Organizational, Service Provider &amp; Community Training
+            </h3>
+            <p class="text-sm sm:text-base text-mutedInk mt-3 leading-relaxed">
+              The themes outlined below represent broad umbrella examples rather than a fixed or exhaustive catalog. Every educational engagement is custom-curated around your organization's specific mandate, operational environment, and the linguistic, literacy, and comprehension levels of your participants. Whether you are convening newcomers, frontline service providers, executive leadership, or mixed groups, any employer, institution, or community partner is welcome to contact us for whatever specialized training, awareness session, or educational support is required.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Umbrella Area 1 -->
+            <div class="bg-white rounded-2xl p-6 border border-tealDeep/10 shadow-sm">
+              <div class="text-xs font-extrabold text-tealDeep uppercase tracking-wider mb-2">Umbrella Theme</div>
+              <h4 class="font-display font-bold text-lg text-ink mb-2">
+                Workplace Culture, Mutual Expectations &amp; Professional Standards
+              </h4>
+              <p class="text-xs text-mutedInk leading-relaxed">
+                Supports employers and teams in establishing clear mutual expectations, healthy professional boundaries, constructive feedback habits, respectful communication, and awareness of standard workplace channels for addressing questions.
+              </p>
+            </div>
+
+            <!-- Umbrella Area 2 -->
+            <div class="bg-white rounded-2xl p-6 border border-tealDeep/10 shadow-sm">
+              <div class="text-xs font-extrabold text-terracotta uppercase tracking-wider mb-2">Umbrella Theme</div>
+              <h4 class="font-display font-bold text-lg text-ink mb-2">
+                Residential Tenancy, Housing Safety &amp; Appliance Care
+              </h4>
+              <p class="text-xs text-mutedInk leading-relaxed">
+                Practical orientation for residents, landlords, and housing providers covering everyday tenancy responsibilities, fire and carbon monoxide detector awareness, safe operation and care of household appliances, ventilation, and preventative home upkeep.
+              </p>
+            </div>
+
+            <!-- Umbrella Area 3 -->
+            <div class="bg-white rounded-2xl p-6 border border-tealDeep/10 shadow-sm">
+              <div class="text-xs font-extrabold text-sage uppercase tracking-wider mb-2">Umbrella Theme</div>
+              <h4 class="font-display font-bold text-lg text-ink mb-2">
+                Canadian Civic Orientation &amp; Everyday Social Norms
+              </h4>
+              <p class="text-xs text-mutedInk leading-relaxed">
+                Accessible educational sessions fostering shared understanding of Canadian civic life, equal dignity in public and domestic spaces, community responsibilities, and constructive social integration without providing formal legal instruction.
+              </p>
+            </div>
+
+            <!-- Umbrella Area 4 -->
+            <div class="bg-white rounded-2xl p-6 border border-tealDeep/10 shadow-sm">
+              <div class="text-xs font-extrabold text-tealDeep uppercase tracking-wider mb-2">Umbrella Theme</div>
+              <h4 class="font-display font-bold text-lg text-ink mb-2">
+                Financial Literacy, Consumer Awareness &amp; Anti-Fraud Education
+              </h4>
+              <p class="text-xs text-mutedInk leading-relaxed">
+                Equips participants at varying literacy levels to navigate everyday banking tools, household budgeting, consumer protections, digital hygiene, and recognizing impersonation or financial scams.
+              </p>
+            </div>
+
+            <!-- Umbrella Area 5 -->
+            <div class="bg-white rounded-2xl p-6 border border-tealDeep/10 shadow-sm">
+              <div class="text-xs font-extrabold text-terracotta uppercase tracking-wider mb-2">Umbrella Theme</div>
+              <h4 class="font-display font-bold text-lg text-ink mb-2">
+                Shared Public Spaces, Transit &amp; Seasonal Safety
+              </h4>
+              <p class="text-xs text-mutedInk leading-relaxed">
+                Awareness raising on shared neighborhood etiquette, municipal waste and property norms, pedestrian and roadway safety, public transit navigation, and cold-weather winter preparedness.
+              </p>
+            </div>
+
+            <!-- Umbrella Area 6 -->
+            <div class="bg-white rounded-2xl p-6 border border-tealDeep/10 shadow-sm">
+              <div class="text-xs font-extrabold text-sage uppercase tracking-wider mb-2">Custom &amp; Mixed Groups</div>
+              <h4 class="font-display font-bold text-lg text-ink mb-2">
+                Bespoke Multi-Audience &amp; Sector-Specific Curricula
+              </h4>
+              <p class="text-xs text-mutedInk leading-relaxed">
+                Need a specialized workshop for frontline service staff, mixed newcomer and host-community cohorts, youth, seniors, or a specific industry? We design custom modules from the ground up to meet your exact requirements.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-6 bg-warmSand rounded-2xl p-5 border border-tealDeep/15 text-center max-w-4xl mx-auto">
+            <p class="text-xs sm:text-sm text-mutedInk leading-relaxed">
+              <strong class="text-tealDeep">Open Invitation to All Organizations:</strong> If your organization requires training on a topic not reflected above, please reach out through the inquiry form below. Our team collaborates directly with employers, service providers, and community leaders to build responsive, purpose-built educational sessions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Workshop & Training Request Form -->
+        <div class="max-w-3xl mx-auto bg-white rounded-3xl p-7 sm:p-10 border border-tealDeep/15 shadow-md">
+          <div class="mb-6">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-terracotta">
+              Organizational Training &amp; Advisory Inquiry
+            </span>
+            <h3 class="font-display text-2xl font-extrabold text-tealDeep mt-1">
+              Request Tailored Training, Workshops, or Advisory Support
+            </h3>
+            <p class="text-sm text-mutedInk mt-1">
+              Tell us about your team, clients, or community members and the specific needs you would like Mosaic Canada to support. Inquiries are routed directly to <strong>nationalintegrationalliance@gmail.com</strong>.
+            </p>
+          </div>
+
+          <form id="partner-form" onsubmit="submitFormToEmail(event, 'partner')" class="space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wide text-ink mb-1.5">
+                  Organization / Company Name *
+                </label>
+                <input
+                  type="text"
+                  name="Organization Name"
+                  required
+                  placeholder="Enter organization or business name"
+                  class="w-full px-4 py-3 rounded-xl bg-warmSand border border-tealDeep/20 text-sm focus:outline-none focus:border-tealDeep"
+                />
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wide text-ink mb-1.5">
+                  Sector / Organization Type *
+                </label>
+                <select
+                  name="Organization Type"
+                  required
+                  class="w-full px-4 py-3 rounded-xl bg-warmSand border border-tealDeep/20 text-sm focus:outline-none focus:border-tealDeep"
+                >
+                  <option value="Employer / Private Enterprise">Employer / Private Enterprise</option>
+                  <option value="Community Partner / Non-Profit Organization">Community Partner / Non-Profit Organization</option>
+                  <option value="Housing Provider / Property Management">Housing Provider / Property Management</option>
+                  <option value="School Board / Educational Institution">School Board / Educational Institution</option>
+                  <option value="Municipality / Government Department">Municipality / Government Department</option>
+                  <option value="Grant Funder / Philanthropic Partner">Grant Funder / Philanthropic Partner</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wide text-ink mb-1.5">
+                  Contact Person *
+                </label>
+                <input
+                  type="text"
+                  name="Contact Name"
+                  required
+                  placeholder="Full Name & Title"
+                  class="w-full px-4 py-3 rounded-xl bg-warmSand border border-tealDeep/20 text-sm focus:outline-none focus:border-tealDeep"
+                />
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wide text-ink mb-1.5">
+                  Official Email *
+                </label>
+                <input
+                  type="email"
+                  name="Email"
+                  required
+                  placeholder="name@organization.ca"
+                  class="w-full px-4 py-3 rounded-xl bg-warmSand border border-tealDeep/20 text-sm focus:outline-none focus:border-tealDeep"
+                />
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wide text-ink mb-1.5">
+                  Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  name="Phone"
+                  required
+                  placeholder="613-555-0199"
+                  class="w-full px-4 py-3 rounded-xl bg-warmSand border border-tealDeep/20 text-sm focus:outline-none focus:border-tealDeep"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wide text-ink mb-1.5">
+                  City &amp; Province *
+                </label>
+                <input
+                  type="text"
+                  name="City and Province"
+                  required
+                  placeholder="e.g., Ottawa, ON or Vancouver, BC"
+                  class="w-full px-4 py-3 rounded-xl bg-warmSand border border-tealDeep/20 text-sm focus:outline-none focus:border-tealDeep"
+                />
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wide text-ink mb-1.5">
+                  Estimated Participant Count
+                </label>
+                <input
+                  type="text"
+                  name="Estimated Participant Count"
+                  placeholder="e.g., 20 staff or 60 community members"
+                  class="w-full px-4 py-3 rounded-xl bg-warmSand border border-tealDeep/20 text-sm focus:outline-none focus:border-tealDeep"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wide text-ink mb-1.5">
+                Specific Needs &amp; Program Objectives *
+              </label>
+              <textarea
+                name="Specific Needs and Objectives"
+                rows="4"
+                required
+                placeholder="Describe your team, clients, or community members, the specific needs you would like us to support, preferred curriculum modules, and target timeframe..."
+                class="w-full px-4 py-3 rounded-xl bg-warmSand border border-tealDeep/20 text-sm focus:outline-none focus:border-tealDeep"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              id="partner-submit-btn"
+              class="w-full py-4 rounded-2xl bg-tealDeep hover:bg-tealDark text-white font-bold text-base shadow-md transition-all"
+            >
+              Submit Organizational Inquiry
+            </button>
+          </form>
+
+          <!-- Confirmation Banner -->
+          <div id="partner-success" class="hidden mt-6 p-5 rounded-2xl bg-tealSoft border border-tealDeep/20 text-tealDeep">
+            <h4 class="font-bold text-base mb-1">✓ Inquiry Forwarded to Mosaic Canada</h4>
+            <p class="text-sm leading-relaxed">
+              Thank you. Your organizational training request has been transmitted to <strong>nationalintegrationalliance@gmail.com</strong>. A program coordinator will respond shortly to discuss your tailored curriculum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- PAGE 5: VOLUNTEER OPPORTUNITIES                                     -->
+    <!-- =================================================================== -->
+    <section id="page-volunteer" class="page-section">
+      <div class="bg-gradient-to-r from-tealDeep to-sage text-white py-12 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="inline-block px-3 py-1 rounded-full bg-terracotta text-white text-xs font-extrabold uppercase tracking-wider mb-3">
+            Nation-Wide Civic Contribution
+          </span>
+          <h1 class="font-display text-3xl sm:text-4xl font-extrabold">
+            Volunteer With Mosaic Canada
+          </h1>
+          <p class="text-teal-50 text-sm sm:text-base max-w-3xl mt-3 leading-relaxed">
+            Strong, cohesive communities depend on engaged citizens sharing their knowledge and time. Whether you bring professional expertise, lived settlement experience, or local outreach energy, we welcome volunteers across every Canadian province and territory.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <!-- Left Column: Ways to Contribute -->
+          <div class="lg:col-span-5 space-y-5">
+            <h2 class="font-display text-2xl font-extrabold text-tealDeep">
+              Areas of Volunteer Contribution
+            </h2>
+            <p class="text-sm text-mutedInk leading-relaxed">
+              We align volunteers with initiatives suited to their professional skills, languages, and availability:
+            </p>
+
+            <div class="bg-white p-5 rounded-2xl border border-tealDeep/10 space-y-1">
+              <h3 class="font-bold text-sm text-tealDeep">🎓 Workshop Facilitators &amp; Civic Mentors</h3>
+              <p class="text-xs text-mutedInk leading-relaxed">
+                Support educational sessions covering workplace standards, financial literacy, housing safety, and civic orientation.
+              </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-tealDeep/10 space-y-1">
+              <h3 class="font-bold text-sm text-terracotta">📱 Samaritan App Community Ambassadors</h3>
+              <p class="text-xs text-mutedInk leading-relaxed">
+                Introduce neighbors and local community hubs to the Samaritan application to build active mutual aid networks.
+              </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-tealDeep/10 space-y-1">
+              <h3 class="font-bold text-sm text-sage">💻 Technology, Communications &amp; Grant Research</h3>
+              <p class="text-xs text-mutedInk leading-relaxed">
+                Contribute software development, curriculum design, English/French and multilingual translation, or non-profit grant development.
+              </p>
+            </div>
+
+            <div class="bg-terracottaSoft p-5 rounded-2xl border border-terracotta/25">
+              <p class="text-xs font-semibold text-ink leading-relaxed">
+                Direct inquiries may also be sent to
+                <a href="mailto:nationalintegrationalliance@gmail.com" class="text-terracotta font-bold underline">
+                  nationalintegrationalliance@gmail.com
+                </a>
+                or by telephone at <strong>613-262-0727</strong>.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Column: Volunteer Sign-Up Form -->
+          <div class="lg:col-span-7 bg-white rounded-3xl p-7 sm:p-10 border border-tealDeep/15 shadow-md">
+            <h3 class="font-display text-2xl font-extrabold text-tealDeep mb-1">
+              Volunteer Registration Form
+            </h3>
+            <p class="text-sm text-mutedInk mb-6">
+              Provide your contact details and describe the skills or support you would like to offer. Submissions are sent directly to <strong>nationalintegrationalliance@gmail.com</strong>.
+            </p>
+
+            <form id="volunteer-form" onsubmit="submitFormToEmail(event, 'volunteer')" class="space-y-5">
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wide text-ink mb-1.5">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  name="Volunteer Name"
+                  required
+                  placeholder="Enter your full name"
+                  class="w-full px-4 py-3.5 rounded-xl bg-warmSand border border-tealDeep/20 text-sm focus:outline-none focus:border-tealDeep"
+                />
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wide text-ink mb-1.5">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    name="Email Address"
+                    required
+                    placeholder="you@example.com"
+                    class="w-full px-4 py-3.5 rounded-xl bg-warmSand border border-tealDeep/20 text-sm focus:outline-none focus:border-tealDeep"
+                  />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wide text-ink mb-1.5">
+                    Phone Number *
+                  </label>
+                  <input
+                    type="tel"
+                    name="Phone Number"
+                    required
+                    placeholder="e.g., 613-555-0142"
+                    class="w-full px-4 py-3.5 rounded-xl bg-warmSand border border-tealDeep/20 text-sm focus:outline-none focus:border-tealDeep"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wide text-ink mb-1.5">
+                  City &amp; Province / Territory (Optional)
+                </label>
+                <input
+                  type="text"
+                  name="City and Province"
+                  placeholder="e.g., Ottawa, ON / Toronto, ON / Vancouver, BC"
+                  class="w-full px-4 py-3.5 rounded-xl bg-warmSand border border-tealDeep/20 text-sm focus:outline-none focus:border-tealDeep"
+                />
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wide text-ink mb-1.5">
+                  Skills Offered &amp; Volunteer Details *
+                </label>
+                <textarea
+                  name="Skills and Volunteer Details"
+                  rows="5"
+                  required
+                  placeholder="Describe the skills, professional background, languages spoken, availability, and ways you would like to contribute to Mosaic Canada..."
+                  class="w-full px-4 py-3.5 rounded-xl bg-warmSand border border-tealDeep/20 text-sm focus:outline-none focus:border-tealDeep"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                id="volunteer-submit-btn"
+                class="w-full py-4 rounded-2xl bg-terracotta hover:bg-terracottaHover text-white font-bold text-base shadow-md transition-all"
+              >
+                Submit Volunteer Application
+              </button>
+            </form>
+
+            <!-- Confirmation Message -->
+            <div id="volunteer-success" class="hidden mt-6 p-5 rounded-2xl bg-tealSoft border border-tealDeep/20 text-tealDeep">
+              <h4 class="font-bold text-base mb-1">✓ Volunteer Registration Received</h4>
+              <p class="text-sm leading-relaxed">
+                Thank you for stepping forward. Your contact information and skill summary have been transmitted directly to <strong>nationalintegrationalliance@gmail.com</strong>. Our volunteer coordinator will follow up with you shortly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- OFFICIAL FOOTER WITH CONTACT & FEDERAL INCORPORATION VERIFICATION     -->
+  <!-- ===================================================================== -->
+  <footer class="bg-ink text-teal-50 border-t border-tealDeep/30 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-10 border-b border-white/10">
+        <!-- Brand & Summary -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-tealDeep flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="3" width="7" height="7" rx="1.5" fill="#D97724" />
+                <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" />
+                <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" />
+                <rect x="14" y="14" width="7" height="7" rx="1.5" fill="#BCE0DC" />
+              </svg>
+            </div>
+            <div>
+              <span class="font-display font-extrabold text-xl text-white block leading-none">
+                Mosaic <span class="text-amber-400">Canada</span>
+              </span>
+              <span class="text-[11px] text-gray-300 block mt-1">
+                National Assembly for Community Integration
+              </span>
+            </div>
+          </div>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            A federally incorporated Canadian non-profit organization advancing civic orientation, institutional literacy, workplace cohesion, and non-monetary community mutual aid through the Samaritan application.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <button onclick="navigateTo('home')" class="text-xs font-semibold text-gray-300 hover:text-amber-300">Home</button>
+            <span class="text-gray-600">•</span>
+            <button onclick="navigateTo('guide')" class="text-xs font-semibold text-gray-300 hover:text-amber-300">Newcomer Guide</button>
+            <span class="text-gray-600">•</span>
+            <button onclick="navigateTo('samaritan')" class="text-xs font-semibold text-gray-300 hover:text-amber-300">Samaritan App</button>
+            <span class="text-gray-600">•</span>
+            <button onclick="navigateTo('partners')" class="text-xs font-semibold text-gray-300 hover:text-amber-300">Employers &amp; Partners</button>
+            <span class="text-gray-600">•</span>
+            <button onclick="navigateTo('volunteer')" class="text-xs font-semibold text-gray-300 hover:text-amber-300">Volunteer</button>
+          </div>
+        </div>
+
+        <!-- National Contact Information -->
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="font-display font-bold text-sm uppercase tracking-wider text-amber-400">
+            Contact Information
+          </h4>
+          <ul class="space-y-2.5 text-sm text-gray-300">
+            <li>
+              <span class="text-gray-400 block text-xs">Email</span>
+              <a href="mailto:nationalintegrationalliance@gmail.com" class="font-semibold text-white hover:text-amber-300 break-all">
+                nationalintegrationalliance@gmail.com
+              </a>
+            </li>
+            <li>
+              <span class="text-gray-400 block text-xs">Phone</span>
+              <a href="tel:6132620727" class="font-semibold text-white hover:text-amber-300">
+                613-262-0727
+              </a>
+            </li>
+            <li>
+              <span class="text-gray-400 block text-xs">Jurisdiction &amp; Headquarters</span>
+              <span class="font-semibold text-white block">
+                Nation-Wide Operations Across Canada
+              </span>
+              <span class="text-xs text-gray-400">
+                Headquarters: Ottawa, Ontario
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Federal Non-Profit Registration & Verification Details -->
+        <div class="lg:col-span-4 bg-white/5 rounded-2xl p-5 border border-white/10 space-y-2.5">
+          <span class="inline-block px-2.5 py-0.5 rounded bg-tealDeep text-teal-100 text-[10px] font-extrabold uppercase tracking-wider">
+            Federal Non-Profit Registration &amp; Verification
+          </span>
+          <p class="text-xs font-bold text-white leading-relaxed">
+            MOSAIC ASSEMBLY FOR RELATIONAL IDENTITY AND ADAPTATION XENOCULTURAL OASIS ASSEMBLÉE MOSAÏQUE POUR L’IDENTITÉ RELATIONNELLE ET L’ADAPTATION OASIS XÉNOCULTURELLE
+          </p>
+          <div class="grid grid-cols-2 gap-3 pt-2 border-t border-white/10 text-xs">
+            <div>
+              <span class="text-gray-400 block">Corporation Number</span>
+              <span class="font-bold text-amber-300">1744396-0</span>
+            </div>
+            <div>
+              <span class="text-gray-400 block">Date of Incorporation</span>
+              <span class="font-bold text-amber-300">11-11-2025 (Nov 11, 2025)</span>
+            </div>
+          </div>
+          <p class="text-[11px] text-gray-400 pt-1">
+            Incorporated under the Canada Not-for-profit Corporations Act. Operating publicly as Mosaic Canada.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
+        <p>© 2025 to 2026 Mosaic Canada. All rights reserved.</p>
+        <p>National Assembly for Community Integration | Ottawa, Ontario</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- JAVASCRIPT: MULTI-PAGE ROUTER, CHECKLIST TRACKER & EMAIL SUBMISSION   -->
+  <!-- ===================================================================== -->
+  <script>
+    // Multi-Page Navigation Router
+    function navigateTo(pageId) {
+      const sections = document.querySelectorAll('.page-section');
+      sections.forEach((sec) => sec.classList.remove('active'));
+
+      const targetSection = document.getElementById('page-' + pageId);
+      if (targetSection) {
+        targetSection.classList.add('active');
+      }
+
+      // Update Desktop & Mobile Nav Active Styles
+      const navButtons = document.querySelectorAll('.nav-btn');
+      navButtons.forEach((btn) => {
+        const target = btn.getAttribute('data-nav');
+        if (target === 'volunteer') {
+          btn.className =
+            btn.className.includes('w-full')
+              ? 'nav-btn w-full text-left px-4 py-3 rounded-xl text-sm font-bold bg-terracotta text-white'
+              : 'nav-btn ml-2 px-5 py-2.5 rounded-xl text-sm font-bold transition-all bg-terracotta text-white hover:bg-terracottaHover shadow-sm';
+          return;
+        }
+
+        if (target === pageId) {
+          btn.className = btn.className.includes('w-full')
+            ? 'nav-btn w-full text-left px-4 py-3 rounded-xl text-sm font-semibold bg-tealDeep text-white'
+            : 'nav-btn px-4 py-2.5 rounded-xl text-sm font-semibold transition-all bg-tealDeep text-white shadow-sm';
+        } else {
+          btn.className = btn.className.includes('w-full')
+            ? 'nav-btn w-full text-left px-4 py-3 rounded-xl text-sm font-semibold text-ink hover:bg-tealSoft'
+            : 'nav-btn px-4 py-2.5 rounded-xl text-sm font-semibold transition-all text-ink hover:bg-tealSoft/70';
+        }
+      });
+
+      // Close mobile drawer if open
+      const mobileMenu = document.getElementById('mobile-menu');
+      const openIcon = document.getElementById('menu-icon-open');
+      const closeIcon = document.getElementById('menu-icon-close');
+      if (!mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        openIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const openIcon = document.getElementById('menu-icon-open');
+      const closeIcon = document.getElementById('menu-icon-close');
+      mobileMenu.classList.toggle('hidden');
+      openIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    }
+
+    // Interactive Settlement Checklist Progress Counter
+    function updateChecklistCount() {
+      const checkboxes = document.querySelectorAll('#arrival-checklist input[type="checkbox"]');
+      let checked = 0;
+      checkboxes.forEach((cb) => {
+        if (cb.checked) checked++;
+      });
+      document.getElementById('checklist-progress').textContent = checked;
+    }
+
+    // Direct Email Submission Handler (Volunteer & Partner Forms -> nationalintegrationalliance@gmail.com)
+    async function submitFormToEmail(event, formType) {
+      event.preventDefault();
+      const form = event.target;
+      const submitBtn = document.getElementById(formType + '-submit-btn');
+      const successBanner = document.getElementById(formType + '-success');
+      const originalBtnText = submitBtn.textContent;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Transmitting to Mosaic Canada...';
+
+      const formData = new FormData(form);
+      const payload = {};
+      formData.forEach((value, key) => {
+        payload[key] = value;
+      });
+      payload['_subject'] =
+        formType === 'volunteer'
+          ? 'New Volunteer Registration: Mosaic Canada'
+          : 'New Organizational Training Request: Mosaic Canada';
+      payload['_template'] = 'table';
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/nationalintegrationalliance@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify(payload),
+        });
+
+        if (response.ok) {
+          form.reset();
+          successBanner.classList.remove('hidden');
+        } else {
+          triggerMailtoFallback(payload);
+          form.reset();
+          successBanner.classList.remove('hidden');
+        }
+      } catch (err) {
+        triggerMailtoFallback(payload);
+        form.reset();
+        successBanner.classList.remove('hidden');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+      }
+    }
+
+    function triggerMailtoFallback(payload) {
+      const subject = encodeURIComponent(payload['_subject']);
+      const lines = Object.entries(payload)
+        .filter(([k]) => !k.startsWith('_'))
+        .map(([k, v]) => `${k}: ${v}`)
+        .join('\n');
+      const body = encodeURIComponent(lines);
+      window.location.href = `mailto:nationalintegrationalliance@gmail.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
